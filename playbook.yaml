@@ -1,0 +1,5 @@
+---
+- name: Deploy Apache Web Server
+  hosts: web_servers
+  roles:
+    - apache_role  # We are leveraging the ansible roles here. 
