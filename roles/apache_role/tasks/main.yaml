@@ -1,0 +1,17 @@
+---
+- name: Install Apache HTTP Server
+  package:
+    name: "{{ apache_package }}"
+    state: present
+
+- name: Deploy Apache Configuration
+  template:
+    src: httpd.conf.j2
+    dest: "{{ apache_config_file }}"
+  notify: Restart Apache
+
+- name: Ensure Apache is Running and Enabled
+  service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: yes
