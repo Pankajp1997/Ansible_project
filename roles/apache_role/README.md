@@ -18,3 +18,13 @@ This Ansible role installs, configures, and deploys the Apache HTTP Server on Li
   hosts: web_servers
   roles:
     - apache_role
+
+---
+
+### **How to Run the Project**  
+
+1. **Prepare the Inventory File** (`inventory`) with the target servers and credentials.  
+2. **Run the Playbook**:
+
+```bash
+ansible-playbook -i inventory playbook.yml
